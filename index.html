@@ -8,16 +8,29 @@
       name="description"
       content="Trusted Bedworth roofers covering 50 miles of Warwickshire. Repairs to full re-roofs, flat roofs, guttering, fascias & dry verges. Free no-obligation quotes. Call 07791 995977."
     />
+    <meta name="theme-color" content="#0d141a" />
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Riley Roofing & Property Maintenance | Bedworth &amp; Warwickshire" />
+    <meta property="og:description" content="Local, family-run and fully insured. Repairs to full re-roofs, roofline, guttering and roof cleaning across Warwickshire. Free no-obligation quotes." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1200&q=70" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Branded favicon: brass roof mark on slate -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='7' fill='%230d141a'/%3E%3Cg fill='none' stroke='%23c08a3e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 17 L17 8 L28 17'/%3E%3Cpath d='M9 17 V26 H25 V17'/%3E%3C/g%3E%3C/svg%3E" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <!-- Styles linked directly so the page renders even if JS never runs -->
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
+    <a class="skip" href="#services">Skip to content</a>
     <!-- ================= TOP BAR ================= -->
     <div class="topbar">
       <div class="wrap topbar__inner">
@@ -139,79 +152,94 @@
       <!-- ================= SERVICES ================= -->
       <section class="services" id="services">
         <div class="wrap">
-          <div class="sec-head">
-            <p class="sec-kicker">What we do</p>
-            <h2 class="sec-title">Every kind of roof, sorted.</h2>
+          <div class="sec-head sec-head--row">
+            <div>
+              <p class="sec-kicker">What we do</p>
+              <h2 class="sec-title">Every kind of roof, <em>sorted</em>.</h2>
+            </div>
             <p class="sec-sub">
-              From a quick repair to a complete re-roof — pick the job below, or just
-              call and we&rsquo;ll talk it through. If it&rsquo;s on your roof, we handle it.
+              Pick a category, or just call and we&rsquo;ll talk it through. If it&rsquo;s
+              on your roof, chances are we handle it — no job too big or small.
             </p>
           </div>
 
+          <div class="svc-tabs" role="tablist" aria-label="Service categories">
+            <button class="svc-tab is-active" data-cat="all" role="tab" aria-selected="true">Everything</button>
+            <button class="svc-tab" data-cat="roofing" role="tab" aria-selected="false">Roofing &amp; re-roofs</button>
+            <button class="svc-tab" data-cat="rooflines" role="tab" aria-selected="false">Roofline &amp; guttering</button>
+            <button class="svc-tab" data-cat="repairs" role="tab" aria-selected="false">Repairs &amp; storm</button>
+          </div>
+
           <div class="cards">
-            <article class="card">
+            <article class="card" data-cat="roofing">
               <div class="card__img">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=70" alt="New tiled roof on a house" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=70" alt="New tiled roof on a house" loading="lazy" />
               </div>
               <div class="card__body">
+                <span class="card__tag">Re-roofs</span>
                 <h3>New roofs &amp; re-roofs</h3>
-                <p>Complete strip and re-cover in tile or slate, done tidy and built to last.</p>
-                <a class="card__link" href="#estimate">Get a price →</a>
+                <p>Complete strip and re-cover in tile or slate — breathable membrane, new battens, the lot. Done tidy and built to outlast the mortgage.</p>
+                <a class="card__link" href="#estimate">Get a price <span aria-hidden="true">&rarr;</span></a>
               </div>
             </article>
 
-            <article class="card">
+            <article class="card" data-cat="repairs">
+              <div class="card__img">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=70" alt="Roofer repairing slipped tiles on a pitched roof" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <span class="card__tag">24-hour call-out</span>
+                <h3>Repairs &amp; storm damage</h3>
+                <p>Leaks, slipped and cracked tiles, and fast call-outs after the weather&rsquo;s had a go at you. We&rsquo;ll make it watertight the same day where we can.</p>
+                <a class="card__link" href="#estimate">Get a price <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </article>
+
+            <article class="card" data-cat="roofing">
               <div class="card__img">
                 <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=700&q=70" alt="Flat roof on a modern extension" loading="lazy" />
               </div>
               <div class="card__body">
+                <span class="card__tag">Flat systems</span>
                 <h3>Flat roofing</h3>
-                <p>Felt, EPDM rubber and GRP fibreglass systems for extensions, garages and dormers.</p>
-                <a class="card__link" href="#estimate">Get a price →</a>
+                <p>Felt, EPDM rubber and GRP fibreglass for extensions, garages and dormers.</p>
+                <a class="card__link" href="#estimate">Get a price <span aria-hidden="true">&rarr;</span></a>
               </div>
             </article>
 
-            <article class="card">
+            <article class="card" data-cat="roofing">
               <div class="card__img">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=70" alt="Roof repair work" loading="lazy" />
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=700&q=70" alt="Chimney repointing and lead flashing work" loading="lazy" />
               </div>
               <div class="card__body">
-                <h3>Repairs &amp; storm damage</h3>
-                <p>Leaks, slipped and broken tiles, and fast 24-hour call-outs after bad weather.</p>
-                <a class="card__link" href="#estimate">Get a price →</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img">
-                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=700&q=70" alt="Guttering and fascias on a house" loading="lazy" />
-              </div>
-              <div class="card__body">
-                <h3>Guttering &amp; downpipes</h3>
-                <p>Cleaning, repairs and full replacement to keep water off your walls.</p>
-                <a class="card__link" href="#estimate">Get a price →</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=70" alt="Fascias, soffits and dry verge" loading="lazy" />
-              </div>
-              <div class="card__body">
-                <h3>Fascias, soffits &amp; dry verges</h3>
-                <p>Fresh uPVC rooflines and mortar-free dry verges that won&rsquo;t crack or come loose.</p>
-                <a class="card__link" href="#estimate">Get a price →</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=700&q=70" alt="Chimney and lead work" loading="lazy" />
-              </div>
-              <div class="card__body">
+                <span class="card__tag">Lead &amp; masonry</span>
                 <h3>Chimneys &amp; lead work</h3>
-                <p>Repointing, flaunching, flashing and lead valleys done the proper way.</p>
-                <a class="card__link" href="#estimate">Get a price →</a>
+                <p>Repointing, flaunching, flashings and lead valleys done the proper way.</p>
+                <a class="card__link" href="#estimate">Get a price <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </article>
+
+            <article class="card" data-cat="rooflines">
+              <div class="card__img">
+                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=700&q=70" alt="New guttering and downpipes on a house" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <span class="card__tag">Guttering</span>
+                <h3>Guttering &amp; downpipes</h3>
+                <p>Clearing, repairs and full replacement to keep water off your walls.</p>
+                <a class="card__link" href="#estimate">Get a price <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </article>
+
+            <article class="card" data-cat="rooflines">
+              <div class="card__img">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=70" alt="uPVC fascias, soffits and dry verge" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <span class="card__tag">Roofline</span>
+                <h3>Fascias, soffits &amp; dry verges</h3>
+                <p>Fresh uPVC rooflines and mortar-free dry verges that won&rsquo;t crack or work loose.</p>
+                <a class="card__link" href="#estimate">Get a price <span aria-hidden="true">&rarr;</span></a>
               </div>
             </article>
           </div>
@@ -226,7 +254,7 @@
           </div>
           <div class="cleaning__copy">
             <p class="sec-kicker">Roof &amp; render cleaning</p>
-            <h2 class="sec-title">Bring a tired roof back to life.</h2>
+            <h2 class="sec-title">Bring a tired roof <em>back to life</em>.</h2>
             <p>
               Moss and algae hold water and shorten the life of your roof. We&rsquo;ll
               clear it down, treat it and leave the whole property looking years younger
@@ -254,10 +282,10 @@
               That&rsquo;s why so much of our work comes from word of mouth.
             </p>
             <div class="why__grid2">
-              <div class="feature"><span class="feature__ic">✓</span><div><strong>Free estimates</strong><p>Honest, no-pressure and no obligation.</p></div></div>
-              <div class="feature"><span class="feature__ic">✓</span><div><strong>Fully insured</strong><p>Public liability cover on every job.</p></div></div>
-              <div class="feature"><span class="feature__ic">✓</span><div><strong>Local &amp; trusted</strong><p>Covering 50 miles of Warwickshire.</p></div></div>
-              <div class="feature"><span class="feature__ic">✓</span><div><strong>24-hour call-outs</strong><p>Storm damage sorted fast.</p></div></div>
+              <div class="feature"><span class="feature__ic">01</span><div><strong>Free estimates</strong><p>Honest, no-pressure and no obligation.</p></div></div>
+              <div class="feature"><span class="feature__ic">02</span><div><strong>Fully insured</strong><p>Public liability cover on every job.</p></div></div>
+              <div class="feature"><span class="feature__ic">03</span><div><strong>Local &amp; trusted</strong><p>Covering 50 miles of Warwickshire.</p></div></div>
+              <div class="feature"><span class="feature__ic">04</span><div><strong>24-hour call-outs</strong><p>Storm damage sorted fast.</p></div></div>
             </div>
           </div>
           <div class="why__media">
@@ -272,9 +300,9 @@
           <div class="sec-head sec-head--row">
             <div>
               <p class="sec-kicker">Recent work</p>
-              <h2 class="sec-title">Off the vans, onto your street.</h2>
+              <h2 class="sec-title">Off the vans, <em>onto your street</em>.</h2>
             </div>
-            <a class="ghost-link" href="https://www.facebook.com/Rileyroofing/?locale=en_GB" target="_blank" rel="noopener">See more on Facebook →</a>
+            <a class="ghost-link" href="https://www.facebook.com/Rileyroofing/?locale=en_GB" target="_blank" rel="noopener">See more on Facebook <span aria-hidden="true">&rarr;</span></a>
           </div>
           <div class="ggrid">
             <figure class="g g--big"><img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=70" alt="Full re-roof in Bedworth" loading="lazy" /><figcaption><span>Bedworth</span>Full re-roof</figcaption></figure>
@@ -292,7 +320,7 @@
         <div class="wrap estimate__grid">
           <div class="estimate__intro">
             <p class="sec-kicker">Free instant estimate</p>
-            <h2 class="sec-title">Get a ballpark in seconds.</h2>
+            <h2 class="sec-title">Get a <em>ballpark</em> in seconds.</h2>
             <p>
               Answer four quick questions for an instant guide price — no email or
               phone number needed to see a figure. Your proper quote is always free,
@@ -355,7 +383,7 @@
       <section class="reviews" id="reviews">
         <div class="wrap reviews__head">
           <p class="sec-kicker">What people say</p>
-          <h2 class="sec-title">353 five-star reviews and counting.</h2>
+          <h2 class="sec-title">353 <em>five-star</em> reviews and counting.</h2>
           <p class="sec-sub">Real words from real customers across Warwickshire.</p>
         </div>
 
@@ -398,7 +426,7 @@
         <div class="wrap contact__grid">
           <div class="contact__left">
             <p class="sec-kicker sec-kicker--light">Book it in</p>
-            <h2 class="sec-title contact__title">Book your free visit.</h2>
+            <h2 class="sec-title contact__title">Book your <em>free visit</em>.</h2>
             <p class="contact__lead">
               Pick a day and time that suits you. We&rsquo;ll come out, take a proper
               look, and give you an honest, no-obligation quote. Once you book, drop
@@ -465,7 +493,7 @@
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
       <div class="wrap footer__cta">
-        <h2>Need a roofer? Let&rsquo;s have a look.</h2>
+        <h2>Need a roofer? <em>Let&rsquo;s have a look.</em></h2>
         <div class="footer__cta-btns">
           <a class="btn btn--amber btn--lg" href="tel:07791995977">Call 07791 995977</a>
           <a class="btn btn--outline-light btn--lg" href="https://wa.me/447791995977" target="_blank" rel="noopener">WhatsApp us</a>
@@ -497,8 +525,12 @@
         </div>
       </div>
       <div class="wrap footer__bar">
-        <p>© <span id="year">2026</span> Riley Roofing &amp; Property Maintenance</p>
-        <p>Fully insured · Free no-obligation quotes</p>
+        <p>© <span id="year">2026</span> Riley Roofing &amp; Property Maintenance · Bedworth, Warwickshire</p>
+        <nav class="footer__legal" aria-label="Legal">
+          <a href="#top">Privacy</a>
+          <a href="#top">Terms</a>
+          <a href="#estimate">Free quote</a>
+        </nav>
       </div>
     </footer>
 

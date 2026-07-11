@@ -27,3 +27,4 @@ pnpm-debug.log*
 
 # graphify internals (keep outputs out of source control)
 graphify-out/
+.vercel

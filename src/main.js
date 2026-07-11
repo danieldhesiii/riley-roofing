@@ -64,6 +64,30 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 });
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* ---------- 2.5 Service category filter ---------- */
+const svcTabs = document.querySelectorAll(".svc-tab");
+if (svcTabs.length) {
+  const serviceCards = gsap.utils.toArray(".services .card");
+  svcTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const cat = tab.dataset.cat;
+      svcTabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle("is-active", on);
+        t.setAttribute("aria-selected", String(on));
+      });
+      serviceCards.forEach((card) => {
+        const show = cat === "all" || card.dataset.cat === cat;
+        card.classList.toggle("is-hidden", !show);
+        if (show && !reduce) {
+          gsap.fromTo(card, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", overwrite: true });
+        }
+      });
+      if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
+    });
+  });
+}
+
 /* ---------- 3. Reveal animations ---------- */
 if (!reduce) {
   const splits = Splitting({ target: ".hero__title", by: "words" });
