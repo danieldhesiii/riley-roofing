@@ -304,11 +304,12 @@ h1, h2, h3, h4 {
 .reviews { padding-block: clamp(4rem, 8vw, 7rem); overflow: hidden; }
 .reviews__head { text-align: center; max-width: 40rem; margin: 0 auto 3rem; }
 .reviews__head .sec-kicker { justify-content: center; }
-.reviews__carousel { max-width: var(--wrap); margin-inline: auto; padding: 0.5rem var(--pad); width: 100%; }
-/* Fallback (no JS): neat horizontal scroll-snap that stays inside the container */
-.reviews__carousel .swiper-wrapper { display: flex; gap: 1.2rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; -webkit-overflow-scrolling: touch; }
-.reviews__carousel.swiper-initialized .swiper-wrapper { gap: 0; overflow: visible; padding-bottom: 0; }
-.reviews__carousel .swiper-slide { flex: 0 0 clamp(230px, 72%, 340px); scroll-snap-align: center; height: auto; }
+.reviews__wrap { padding-block: 0.5rem; }
+.reviews__carousel { width: 100%; overflow: hidden; }
+.reviews__carousel .swiper-slide { height: auto; }
+/* Fallback ONLY before Swiper initialises — must not override Swiper's slide sizing */
+.reviews__carousel:not(.swiper-initialized) .swiper-wrapper { display: flex; gap: 1.2rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; -webkit-overflow-scrolling: touch; }
+.reviews__carousel:not(.swiper-initialized) .swiper-slide { flex: 0 0 clamp(230px, 72%, 340px); scroll-snap-align: center; }
 .rev { background: var(--bone); border: 1px solid var(--line-soft); border-radius: var(--r-md); padding: 2rem 1.9rem; height: 100%; display: flex; flex-direction: column; gap: 1.1rem; box-shadow: var(--shadow-sm); }
 .rev__stars { color: var(--blue); letter-spacing: 2px; font-size: 1rem; }
 .rev__text { font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; line-height: 1.45; color: var(--ink); flex: 1; margin: 0; letter-spacing: -0.015em; }
@@ -448,10 +449,15 @@ h1, h2, h3, h4 {
   .calc__note { display: none; }
   .calc__result .btn { grid-column: 1 / -1; }
 
-  /* REVIEWS — smaller cards so more of them are visible at a glance */
-  .rev { padding: 1.3rem; gap: 0.75rem; }
-  .rev__text { font-size: 1.02rem; line-height: 1.4; }
-  .rev__ava { width: 38px; height: 38px; border-radius: 10px; }
+  /* REVIEWS — two compact cards in view, snapping to full reviews */
+  .rev { padding: 1rem 0.95rem; gap: 0.55rem; border-radius: var(--r-md); }
+  .rev__stars { font-size: 0.82rem; letter-spacing: 1px; }
+  .rev__text { font-size: 0.86rem; line-height: 1.38; }
+  .rev__text::before { font-size: 1.1em; }
+  .rev__meta { gap: 0.5rem; }
+  .rev__ava { width: 32px; height: 32px; border-radius: 8px; font-size: 0.8rem; }
+  .rev__who b { font-size: 0.8rem; }
+  .rev__who i { font-size: 0.68rem; }
   .reviews__actions { margin-top: 1.6rem; }
 
   .ggrid { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
