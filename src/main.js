@@ -170,9 +170,9 @@ if (track) {
     if (reviewSwiper) reviewSwiper.destroy(true, true);
     reviewSwiper = new Swiper(".reviews__carousel", {
       modules: [Autoplay],
-      slidesPerView: 1.1, spaceBetween: 20, centeredSlides: false, loop: true, grabCursor: true,
+      slidesPerView: 1.3, spaceBetween: 12, centeredSlides: false, loop: true, grabCursor: true,
       autoplay: reduce ? false : { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
-      breakpoints: { 640: { slidesPerView: 2, spaceBetween: 22 }, 1024: { slidesPerView: 3, spaceBetween: 24 } },
+      breakpoints: { 480: { slidesPerView: 1.6, spaceBetween: 14 }, 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 3, spaceBetween: 24 } },
     });
   }
   initReviews();
